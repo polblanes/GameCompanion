@@ -11,8 +11,7 @@
     <string name="signup_title_email">Email:</string>
     <string name="signup_edit_email">Your email</string>
     <string name="signup_title_password">Password:</string>
-    <string name="signup_edit_password1">Your password</string>
-    <string name="signup_edit_password2">Repeat your password</string>
+    <string name="signup_edit_password">Your password</string>
     <string name="signup_submit_button">SIGN UP</string>
     <string name="signup_to_login"><u>Already have an Account? Click here to log in!</u></string>
 
@@ -25,8 +24,17 @@
     <string name="login_submit_button">LOG IN</string>
     <string name="login_to_signup"><u>Don\'t have an Account yet? Click here to sign up!</u></string>
 
+    <!-- PROFILE NO USER -->
+    <string name="profilenouser_signup">SIGN UP</string>
+    <string name="profilenouser_login">LOG IN</string>
+
+    <!-- MESSAGES -->
+    <string name="msg_inputhint">Type here</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="fragment_home">Home fragment</string>
     <string name="fragment_news">News fragment</string>
     <string name="fragment_profile">Profile fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

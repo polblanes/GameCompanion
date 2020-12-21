@@ -3,6 +3,7 @@ package com.gamecompanion
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,10 +15,10 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.selectedItemId = R.id.tab_home
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
 
-            //TODO: Go to the correct screen
+            //Go to the correct screen
             when (item.itemId) {
                 R.id.tab_home -> {
-                    //TODO: Go to home
+                    //Go to home
                     val fragmentManager = supportFragmentManager
                     val fragmentTransaction = fragmentManager.beginTransaction()
                     val fragment = HomeFragment()
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity() {
                     fragmentTransaction.commit()
                 }
                 R.id.tab_news -> {
-                    //TODO: Go to news
+                    //Go to news
                     val fragmentManager = supportFragmentManager
                     val fragmentTransaction = fragmentManager.beginTransaction()
                     val fragment = NewsFragment()
@@ -33,12 +34,22 @@ class MainActivity : AppCompatActivity() {
                     fragmentTransaction.commit()
                 }
                 R.id.tab_profile -> {
-                    //TODO: Go to profile
-                    val fragmentManager = supportFragmentManager
-                    val fragmentTransaction = fragmentManager.beginTransaction()
-                    val fragment = ProfileFragment()
-                    fragmentTransaction.replace(R.id.fragment_container, fragment)
-                    fragmentTransaction.commit()
+                    if (FirebaseAuth.getInstance().currentUser == null){
+                        //Go to profile no user fragment
+                        val fragmentManager = supportFragmentManager
+                        val fragmentTransaction = fragmentManager.beginTransaction()
+                        val fragment = ProfileNoUserFragment()
+                        fragmentTransaction.replace(R.id.fragment_container, fragment)
+                        fragmentTransaction.commit()
+                    }
+                    else {
+                        //Go to profile
+                        val fragmentManager = supportFragmentManager
+                        val fragmentTransaction = fragmentManager.beginTransaction()
+                        val fragment = ProfileFragment()
+                        fragmentTransaction.replace(R.id.fragment_container, fragment)
+                        fragmentTransaction.commit()
+                    }
                 }
             }
 

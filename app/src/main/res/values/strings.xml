@@ -3,4 +3,8 @@
     <string name="tab_home">Home</string>
     <string name="tab_news">News</string>
     <string name="tab_profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="fragment_home">Home fragment</string>
+    <string name="fragment_news">News fragment</string>
+    <string name="fragment_profile">Profile fragment</string>
 </resources>

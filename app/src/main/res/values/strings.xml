@@ -3,6 +3,28 @@
     <string name="tab_home">Home</string>
     <string name="tab_news">News</string>
     <string name="tab_profile">Profile</string>
+
+    <!-- SIGNUP -->
+    <string name="title_activity_signup">Sign Up</string>
+    <string name="signup_title_username">Username:</string>
+    <string name="signup_edit_username">Your username</string>
+    <string name="signup_title_email">Email:</string>
+    <string name="signup_edit_email">Your email</string>
+    <string name="signup_title_password">Password:</string>
+    <string name="signup_edit_password1">Your password</string>
+    <string name="signup_edit_password2">Repeat your password</string>
+    <string name="signup_submit_button">SIGN UP</string>
+    <string name="signup_to_login"><u>Already have an Account? Click here to log in!</u></string>
+
+    <!-- LOGIN -->
+    <string name="title_activity_login">Log In</string>
+    <string name="login_title_username">Username:</string>
+    <string name="login_edit_username">Your username</string>
+    <string name="login_title_password">Password:</string>
+    <string name="login_edit_password">Your password</string>
+    <string name="login_submit_button">LOG IN</string>
+    <string name="login_to_signup"><u>Don\'t have an Account yet? Click here to sign up!</u></string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="fragment_home">Home fragment</string>
     <string name="fragment_news">News fragment</string>

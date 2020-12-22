@@ -17,16 +17,17 @@
 
     <!-- LOGIN -->
     <string name="title_activity_login">Log In</string>
-    <string name="login_title_username">Username:</string>
-    <string name="login_edit_username">Your username</string>
+    <string name="login_title_email">Email:</string>
+    <string name="login_edit_email">Your email</string>
     <string name="login_title_password">Password:</string>
     <string name="login_edit_password">Your password</string>
     <string name="login_submit_button">LOG IN</string>
     <string name="login_to_signup"><u>Don\'t have an Account yet? Click here to sign up!</u></string>
 
     <!-- PROFILE NO USER -->
-    <string name="profilenouser_signup">SIGN UP</string>
-    <string name="profilenouser_login">LOG IN</string>
+    <string name="profile_signup">SIGN UP</string>
+    <string name="profile_login">LOG IN</string>
+    <string name="profile_logout">LOG OUT</string>
 
     <!-- MESSAGES -->
     <string name="msg_inputhint">Type here</string>

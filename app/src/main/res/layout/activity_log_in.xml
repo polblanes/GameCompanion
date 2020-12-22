@@ -18,20 +18,20 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView_login_username"
+            android:id="@+id/textView_login_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/login_title_username"
+            android:text="@string/login_title_email"
             android:textAlignment="center" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/login_input_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:ems="10"
-            android:hint="@string/login_edit_username"
-            android:inputType="textPersonName"
+            android:hint="@string/login_edit_email"
+            android:inputType="textEmailAddress"
             android:textAlignment="center" />
 
         <TextView

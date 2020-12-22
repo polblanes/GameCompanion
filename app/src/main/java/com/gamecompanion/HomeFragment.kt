@@ -1,10 +1,16 @@
 package com.gamecompanion
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import com.google.firebase.firestore.FirebaseFirestore
+import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,6 +41,44 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val btnSend = view.findViewById<Button>(R.id.message_btn_send)
+        btnSend.setOnClickListener {
+            val userText = view.findViewById<EditText>(R.id.message_input).text.toString()
+            //TODO: Send text to db, save as user message, clear text box, hide keyboard
+            Log.i("HomeFragment", "Text Message: " + userText)
+
+            val newMessage = MessageModel(userText, Date())
+            val db = FirebaseFirestore.getInstance()
+            db.collection(COLLECTION_MESSAGES).add(newMessage)
+                .addOnSuccessListener {
+                    //TODO: Refresh message list
+                    loadFirebaseMessages()
+                }
+                .addOnFailureListener {
+                    Log.e("HomeFragment", it.message!!)
+                    //Toast.makeText(this@HomeFragment, "Message not sent.", Toast.LENGTH_SHORT).show()
+                }
+        }
+
+        loadFirebaseMessages()
+    }
+
+    fun loadFirebaseMessages() {
+        val db = FirebaseFirestore.getInstance()
+        db.collection(COLLECTION_MESSAGES).get().addOnCompleteListener { task ->
+            if (task.isSuccessful)
+            {
+                //Retrieved collection successfully
+                task.result?.forEach { documentSnapShot ->
+                    val message = documentSnapShot.toObject(MessageModel::class.java)
+                    Log.i("HomeFragment", "Got message from Firestore: " + message)
+                }
+            }
+        }
     }
 
     companion object {

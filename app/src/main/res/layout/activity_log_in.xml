@@ -76,6 +76,14 @@
             android:text="@string/login_to_signup"
             android:textAlignment="center" />
 
+        <ProgressBar
+            android:id="@+id/login_progressbar"
+            style="@android:style/Widget.DeviceDefault.Light.ProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin"
+            android:visibility="gone" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

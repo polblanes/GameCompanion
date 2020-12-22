@@ -34,22 +34,12 @@ class MainActivity : AppCompatActivity() {
                     fragmentTransaction.commit()
                 }
                 R.id.tab_profile -> {
-                    if (FirebaseAuth.getInstance().currentUser == null){
-                        //Go to profile no user fragment
-                        val fragmentManager = supportFragmentManager
-                        val fragmentTransaction = fragmentManager.beginTransaction()
-                        val fragment = ProfileNoUserFragment()
-                        fragmentTransaction.replace(R.id.fragment_container, fragment)
-                        fragmentTransaction.commit()
-                    }
-                    else {
-                        //Go to profile
-                        val fragmentManager = supportFragmentManager
-                        val fragmentTransaction = fragmentManager.beginTransaction()
-                        val fragment = ProfileFragment()
-                        fragmentTransaction.replace(R.id.fragment_container, fragment)
-                        fragmentTransaction.commit()
-                    }
+                    //Go to profile
+                    val fragmentManager = supportFragmentManager
+                    val fragmentTransaction = fragmentManager.beginTransaction()
+                    val fragment = ProfileFragment()
+                    fragmentTransaction.replace(R.id.fragment_container, fragment)
+                    fragmentTransaction.commit()
                 }
             }
 
